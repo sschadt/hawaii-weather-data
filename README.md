@@ -1,13 +1,12 @@
 # Climate analysis using SQLAlchemy ORM & Flask routes for data endpoints
 
-## Data Engineering
+## Data Preparation
 
 Climate data for Hawaii was provided in two CSV files. The content of these files was scrubbed. 
 
 * Jupyter Notebook file called `data_engineering.ipynb` covers data engineering tasks.
 * Pandas dataframes are created from the measurement and station CSV files. NaNs and missing values are then cleaned from the data.
 * Cleaned CSV files are saved.
-
 
 ## Database Engineering
 
@@ -25,18 +24,18 @@ Climate analysis and data exploration on new weather tables. The following analy
 * Start date and end date determine "vacation" range. 
 * Used SQLAlchemy `create_engine` to connect to sqlite database, and `automap_base()` to reflect tables into classes. Referenced those classes as `Station` and `Measurement`.
 
-### Precipitation Analysis
+### Precipitation analysis
 
 * Queries retrieve the last 12 months of precipitation data, and results are plotted using matplotlib
 * Pandas dataframes house the summary statistics for the precipitation data.
 
-### Station Analysis
+### Station analysis
 
 * Calculations of the total number of stations, and most active stations.
 * Retrieval of the last 12 months of temperature observation data (tobs), filtered by the station with the highest number of observations.
 * Plotted results as a histogram with `bins=12`.
 
-### Temperature Analysis
+### Temperature analysis
 
 * Function `calc_temps` accepts a start date and end date in the format `%Y-%m-%d`, returns the minimum, average, and maximum temperatures for that range of dates.
 * Function calculates min, avg, and max temperatures for trip using the matching dates from the previous year (i.e. use "2017-01-01" if trip start date was "2018-01-01")
@@ -44,11 +43,11 @@ Climate analysis and data exploration on new weather tables. The following analy
   * Used the average temperature as the bar height.
   * Used the peak-to-peak (tmax-tmin) value as the y error bar (yerr).
 
-## Flask app
+## Flask Web Application
 
 Flask web app with routes (endpoints) displaying JSON data results from each of the above queries.
 
-### Routes
+### Routes (API endpoints)
 
 * `/api/v1.0/precipitation`
 
