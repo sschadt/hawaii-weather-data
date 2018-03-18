@@ -1,12 +1,13 @@
-# Climate analysis using SQLAlchemy ORM & Flask routes for data endpoints
+# Climate analysis using SQLAlchemy (sqlite) & Flask data endpoints
+**Technology stack**: Python, SQLAlchemy ORM, SQLite, Pandas, Matplotlib, Flask (JSON API endpoints)
 
 ## Data Preparation
 
 Climate data for Hawaii was provided in two CSV files. The content of these files was scrubbed. 
 
-* Jupyter Notebook file called `data_engineering.ipynb` covers data engineering tasks.
-* Pandas dataframes are created from the measurement and station CSV files. NaNs and missing values are then cleaned from the data.
-* Cleaned CSV files are saved.
+* Jupyter Notebook `data_engineering.ipynb` takes care of data preparation / cleanup tasks.
+* Pandas dataframes are created from the measurement and station CSV files. 
+* NaNs / missing values are cleaned from the data, and cleaned CSV files are saved.
 
 ## Database Engineering
 
@@ -18,7 +19,7 @@ Using SQLAlchemy to model database schema, sqlite tables for "measurements" and 
 
 ## Climate Analysis
 
-Climate analysis and data exploration on new weather tables. The following analysis was completed using SQLAlchemy ORM queries, Pandas, and Matplotlib.
+Climate analysis and data exploration on new weather tables. 
 
 * Jupyter Notebook file called `climate_analysis.ipynb` used to complete climate analysis and data exporation.
 * Start date and end date determine "vacation" range. 
